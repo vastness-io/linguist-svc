@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+service Linguist {
+
+    rpc GetLanguages (LanguageRequest) returns (LanguageResponse) {}
+
+}
+
+message LanguageRequest {
+    string remoteURL = 1;
+}
+
+message LanguageResponse {
+    repeated Language language = 1;
+}
+
+message Language {
+    string name = 1;
+    double percentage = 2;
+}
