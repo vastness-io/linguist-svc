@@ -1,13 +1,13 @@
 syntax = "proto3";
 
+package linguist;
+
 service Linguist {
-
     rpc GetLanguages (LanguageRequest) returns (LanguageResponse) {}
-
 }
 
 message LanguageRequest {
-    string remoteURL = 1;
+    repeated string file_names = 1;
 }
 
 message LanguageResponse {
